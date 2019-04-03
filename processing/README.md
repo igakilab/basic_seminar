@@ -1,3 +1,56 @@
+<!-- TOC -->
+
+- [Processingとは](#processingとは)
+  - [Processingで何ができるか](#processingで何ができるか)
+    - [字や絵がかける](#字や絵がかける)
+    - [絵を動かせる（アニメーション）](#絵を動かせるアニメーション)
+    - [画面をクリックできる](#画面をクリックできる)
+    - [複雑なサンプル](#複雑なサンプル)
+  - [インストール](#インストール)
+    - [ファイルのダウンロード](#ファイルのダウンロード)
+    - [ファイルの解凍](#ファイルの解凍)
+    - [Processingの実行](#processingの実行)
+  - [じゃんけんゲームを作ってみよう（その1）](#じゃんけんゲームを作ってみようその1)
+    - [sketchファイルの保存](#sketchファイルの保存)
+    - [画面の表示](#画面の表示)
+      - [Try](#try)
+    - [背景色の変更](#背景色の変更)
+      - [カラーコードとは](#カラーコードとは)
+      - [Try](#try-1)
+    - [図形の表示](#図形の表示)
+      - [Processingの座標](#processingの座標)
+      - [Try](#try-2)
+    - [文字の表示](#文字の表示)
+      - [Try](#try-3)
+      - [日本語の扱い（おまけ）](#日本語の扱いおまけ)
+    - [マウスでの操作と条件分岐と変数(その1)](#マウスでの操作と条件分岐と変数その1)
+      - [Try](#try-4)
+    - [マウスでの操作と条件分岐と変数(その2)](#マウスでの操作と条件分岐と変数その2)
+      - [Try](#try-5)
+  - [テニスゲームを作ってみよう](#テニスゲームを作ってみよう)
+    - [sketchファイル(tennis)の作成](#sketchファイルtennisの作成)
+    - [変数の使い方](#変数の使い方)
+      - [変数とは](#変数とは)
+        - [変数の宣言と型](#変数の宣言と型)
+        - [変数のスコープ](#変数のスコープ)
+    - [draw()を利用した繰り返しと乱数](#drawを利用した繰り返しと乱数)
+      - [乱数とは](#乱数とは)
+      - [Try](#try-6)
+    - [draw()を利用した繰り返し2](#drawを利用した繰り返し2)
+    - [ボールの移動](#ボールの移動)
+    - [ボールの反射](#ボールの反射)
+      - [println()デバッグ](#printlnデバッグ)
+      - [Try](#try-7)
+    - [draw()を利用したマウス操作との連動](#drawを利用したマウス操作との連動)
+    - [当たり判定](#当たり判定)
+  - [じゃんけんゲームを作ってみよう（その2）](#じゃんけんゲームを作ってみようその2)
+    - [if文のネスト](#if文のネスト)
+      - [Try](#try-8)
+    - [開発者によるメソッドの定義と利用](#開発者によるメソッドの定義と利用)
+    - [メソッドとは](#メソッドとは)
+
+<!-- /TOC -->
+
 # Processingとは
 - MITメディアラボで開発されていたビジュアル・アートを表現することを目的としたプログラミング言語．
 - https://processing.org/
@@ -207,7 +260,7 @@ void draw(){
 
 <img src="https://github.com/igakilab/basic_seminar/raw/images/images/processing_japan_config.jpg" width=400>
 
-2. 1の設定でエディタ中に日本語が入力できるようになるが， `text("ぐー",50,80);` として実行しても，エディタ上では日本語が表示されているが，実行した画面では正常に日本語は表示されない．以下をコピペしてプログラムを実行してみること．
+2. 1の設定でエディタ中に日本語が入力できるようになる．ただし， `text("ぐー",50,80);` として実行しても，エディタ上では日本語が表示されているが，実行した画面では正常に日本語は表示されない．以下をコピペしてプログラムを実行してみること．
 
 ```Processing
 void setup(){
@@ -232,7 +285,7 @@ void draw(){
 
 - `PFont font = createFont("MS Gothic",50);` は日本語フォントを50ptの大きさで作成(create)している．その後， `textFont(font);` を呼び出すことで，以降のtextをこの日本語フォントで下図のように表示することができるようになる．
 
-<img src="https://github.com/igakilab/basic_seminar/raw/images/images/processing_japan_config.jpg" width=400>
+<img src="https://github.com/igakilab/basic_seminar/raw/images/images/processing_japanese_font.jpg" width=400>
 
 ### マウスでの操作と条件分岐と変数(その1)
 - 以下のコードをコピペしてみよう
@@ -340,6 +393,7 @@ void draw(){
     - `int hoge;`
   - `float`という **型** が指定された場合，その変数には（この場合変数x）小数値を保存できる．`int`という型が指定された場合，その変数（この例の場合はhoge)には整数値が保存できる．
     - 型には保存できる値の範囲（上限値と下限値）も定められている
+    - 他にも文字列が保存できる `String fuga;` という変数の型もある
   - コンピュータにおける整数と小数の扱いの違いについては **コンピュータ入門** の授業で習うので確認しておくこと
 - 変数に値を保存することを **代入** と呼ぶ
 - 変数を利用することで，一度変数に値を **代入** すると，あとは変数を **再利用** してプログラムを書くことができる
@@ -350,6 +404,7 @@ void draw(){
 ```
 - **変数x** を **再利用** することで，円の直下に四角が描画されるプログラムが作成できる
   - このプログラムの場合，円や四角形の場所を変更したい場合， `x = 50.5;` の数値を変更するだけで円と四角形の位置をまとめて変更できる
+- 変数には今回のxのようなユーザが自分で宣言する変数だけでなく，`mouseX` のようなProcessing側で用意している変数もある．後者については宣言を行う必要はない
 
 ##### 変数のスコープ
 - 変数を **どこで宣言するか** で利用できる場所 (**スコープ**)が変わる
@@ -377,8 +432,8 @@ void draw(){
 
 - 下図のように無数の円がランダムに斜めの線上（x座標とy座標が同じになる線）に描画されていく
 - `setup()` メソッドはプログラムを実行した最初に一度だけ呼ばれるが， `draw()` メソッドはプログラムを実行すると `setup()` が実行されたあと何回も呼び出される
-  - このプログラムの場合，  `x = random(500);  ellipse(x,x,20,20); //Ball' この2行が何回も何回も呼び出される
-- `random(500)` はランダムな値を返すメソッド．引数に500が指定されると，0以上500 **未満** の小数値が返ってくる．ここでは，xという **変数** に **0以上500未満** のランダムな値が保存（一般に**代入**と呼ぶ)される
+  - このプログラムの場合，  `x = random(500);  ellipse(x,x,20,20); //Ball` この2行が何回も何回も呼び出される
+- `random()` はランダムな値を返すメソッド．引数に500が指定されると，0以上500 **未満** の小数値が返ってくる．ここでは，xという **変数** に **0以上500未満** のランダムな値が保存（一般に**代入**と呼ぶ)される
 
 <img src="https://github.com/igakilab/basic_seminar/raw/images/images/processing_random.jpg" width=400>
 
@@ -392,4 +447,291 @@ void draw(){
 
 <img src="https://github.com/igakilab/basic_seminar/raw/images/images/processing_random2.jpg" width=400>
 
-### メソッドの作成と利用
+### draw()を利用した繰り返し2
+- 以下のプログラムをコピペしてみよう
+ - コピペしたあと，このプログラムを実行するとどのように表示されるかを **実行前に** 考えてみよう
+
+```processing
+float x;
+float y;
+void setup(){
+  size(500,500);
+  x = random(500);
+  y = random(500);
+}
+
+void draw(){
+  x = x + 1;
+  y = y + 1;
+  ellipse(x,y,20,20); //Ball
+}
+```
+
+- `x = random(500);  y = random(500);` が `draw()` から `setup()` に移動している
+- `draw()` では `x = x + 1;` が何回も呼び出される．この記述では，変数xにこれまでの変数xの値に1を足したものが加算される（つまり毎回1ずつ増えていくことを表す）．変数yも同じ
+
+### ボールの移動
+- 以下のコードをコピペしてみよう
+ - コピペしたあと，このプログラムを実行するとどのように表示されるかを **実行前に** 考えてみよう
+ - Hint: `background(#000000);` を実行するとその時点の画面を黒で塗りつぶす
+
+```processing
+float x;
+float y;
+int speedX = 1;
+int speedY = 1;
+void setup(){
+  size(500,500);
+  x = random(500);
+  y = random(500);
+}
+
+void draw(){
+  background(#000000);//Clear display
+  x = x + speedX;
+  y = y + speedY;
+  ellipse(x,y,20,20); //Ball
+}
+```
+
+### ボールの反射
+- 以下のコードをコピペしてみよう
+ - コピペしたあと，このプログラムを実行するとどのように表示されるかを **実行前に** 考えてみよう
+
+```processing
+float x;
+float y;
+int speedX = 1;
+int speedY = 1;
+void setup(){
+  size(500,500);
+  x = random(500);
+  y = random(500);
+}
+
+void draw(){
+  background(#000000);//Clear display
+  x = x + speedX;
+  y = y + speedY;
+  ellipse(x,y,20,20); //Ball
+  if( x < 0 || x > 500){
+    speedX = speedX * -1;
+  }
+}
+```
+
+- `if(){}` の記述を `if文` と呼び，条件分岐（もし～だったら～する）を表している
+  - `()` の中に条件を書き，`{}` の中に条件が満たされたときに実行する処理を書く
+- `if( x < 0 || x > 500)` は **もし変数xの値が0未満 あるいは 変数xの値が 500より大きければ** を表している．
+  - `||` は **あるいは** ， `&&` は **かつ** を表す
+- `{}` の中の処理はspeedXの値を元のspeedXの値に `-1` をかけたものを表している．この場合は speedXの値が1であれば-1に，-1であれば1になる
+
+#### println()デバッグ
+- プログラム中の誤りを特定し，修正する作業のことを **デバッグ** という
+- `if文` などの条件分岐を利用する際，変数の値や分岐が正しく動作しているかをコードを見るだけで確認することは困難な場合がある
+- 以下のコードを↑のプログラムの `if( x < 0 || x > 500){` の前の行に追加してみよう
+
+```processing
+  println("x:"+x);
+```
+
+- このコードを追加した状態でプログラムを実行すると，下図のようにエディタ下部のコンソールというエリアに `x:105.621` というように `x:`という文字列とそのときの`変数x` の値が表示される
+- プログラム実行時に意図しない振る舞いをするときは利用すると良い
+  - println() を利用する以外に，Processingエディタに付属のデバッガを利用してデバッグを行う方法もあるが授業中には紹介しない．興味がある場合は調べてみると良い
+
+<img src="https://github.com/igakilab/basic_seminar/raw/images/images/processing_println.jpg" width=400>
+
+#### Try
+- speedXやspeedYの最初の値(初期値)を変更するとどうなるか確認してみよう
+- ↑のプログラムを修正し，画面の両サイドだけでなく，上下の壁にあたった場合もボールが跳ね返るようなプログラムにしてみよう
+
+### draw()を利用したマウス操作との連動
+- 以下の一行を `draw()` メソッドのブロック内の `background(#000000);` の次の行に追加してみよう
+
+```processing
+  rect(mouseX,400,100,50);
+```
+
+- 画面上でマウスを動かすと，その動きに連動して左右に動く長方形が表示される
+  - `rect()` の最初の引数が `mouseX` になっているため，長方形左上のx座標がマウスポインタの場所に応じて変更される
+- ここで `mouseX` はProcessingが用意している変数で，呼び出されたときの画面上でのマウスポインタの位置のx座標が保存されている
+
+### 当たり判定
+- 以下のコードをコピペしてみよう
+
+```processing
+float x;
+float y;
+int speedX = 1;
+int speedY = 1;
+void setup(){
+  size(500,500);
+  x = random(500);
+  y = random(500);
+}
+
+void draw(){
+  background(#000000);//Clear display
+  rect(mouseX,400,100,50);
+  x = x + speedX;
+  y = y + speedY;
+  ellipse(x,y,20,20); //Ball
+  if( x < 0 || x > 500){
+    speedX = speedX * -1;
+  }
+  if(y<0 || y > 500){
+    speedY = speedY * -1;
+  }
+  if(x >= mouseX && x <= mouseX + 100 && y > 400){
+    speedY = speedY * -1;
+  }
+}
+```
+
+- `if(x >= mouseX && x <= mouseX + 100 && y > 400){}` ここの `if文` で当たり判定を実現している
+- 下図で示すように，マウスに連動して左右に動く長方形の上側の枠にあたると `speedY` の値の正負が反転する（つまりy軸(上下)方向に跳ね返る）
+  - 具体的には， **もし** 変数xの値(ボールのx座標)がmouseXの値 **以上** で **かつ**，mouseXの値 + 100 (長方形の幅) **以下** で **かつ**，変数yの値(ボールのy座標)が 400 (長方形の上側の枠のy座標) **よりも大きい** 場合に `speedY` の値の正負を反転させる
+
+<img src="https://github.com/igakilab/basic_seminar/raw/images/images/processing_atari.jpg" width=400>
+
+## じゃんけんゲームを作ってみよう（その2）
+- 乱数や `draw()` メソッド，変数などを駆使してCPUと対戦できるじゃんけんゲームを完成させよう
+- まず，↑で作成したじゃんけんゲーム（その1）のファイルを開こう
+  - processingを起動し，**ファイル->開く** で `Janken` フォルダの`Janken.pde` ファイルを指定すると良い
+
+### if文のネスト
+- 以下のコードをコピペしてみよう
+  - `void mouseClicked()` メソッドの中身が変更されている
+
+```processing
+void setup(){
+  size(450,300);//display size
+  background(#000000);//display background color
+  fill(#ff0000);
+  ellipse(75,75,150,150);
+  rect(150,0,150,150);
+  ellipse(375,75,150,150);
+
+  textSize(50);
+  fill(#000000);
+  text("Gu",50,80);
+  text("Choki",160,80);
+  text("Pa",350,80);
+}
+
+void draw(){
+}
+
+void mouseClicked(){
+  fill(#000000);//Black
+  rect(0,150,450,150);
+  fill(#FFFFFF);//White
+
+  float cpuHand = random(3);// 0~1:Gu,1~2:Choki,2~3:Pa
+  if(mouseX >=0 && mouseX < 150){
+    if(cpuHand < 1){//cpu's hand is Gu
+      text("Draw",75,260);
+    }else if(cpuHand < 2){//cpu's hand is Choki
+      text("You win!",75,260);
+    }else{//cpu's hand is Pa
+      text("You lose",75,260);
+    }
+  }else if (mouseX >= 150 && mouseX < 300){
+    text("Choki Clicked",75,260);
+  } else {
+    text("Pa Clicked",75,260);
+  }
+}
+```
+
+- `void mouseClicked()` メソッドはProcessingによって，画面上でマウスがクリックされるたびに呼び出されるメソッドである
+- `float cpuHand = random(3);` はCPUのじゃんけんの手を計算している． `random(3)` によって **0以上3未満** の数値が返ってくるため，0以上1未満の場合はGu，1以上2未満の場合はChoki，2以上3未満の場合はPaと設定している
+  - `float cpuHand` は小数値の値を保存できる変数 `cpuHand` を宣言している
+- プログラムの↓の部分がじゃんけんの判定を行っている
+- `if(mouseX >=0 && mouseX < 150)` は画面をクリックしたときのマウスポインタのx座標が **0以上でかつ150未満** の場合を表している．さらに，次の行の `if(cpuHand < 1){//cpu's hand is Gu` は **変数cpuHandの値が1未満の場合** を意味しており，前の行の **if文のブロックの中** に含まれている．すなわち，マウスポインタのx座標が **0以上でかつ150未満** であり， **変数cpuHandの値が1未満の場合** に `text("Draw",75,260);` が実行されることを示している．
+  - このように `if文` の**ブロックの中**に 別の `if文`が含まれることを **if文のネスト** という
+
+```processing
+  if(mouseX >=0 && mouseX < 150){
+    if(cpuHand < 1){//cpu's hand is Gu
+      text("Draw",75,260);
+    }else if(cpuHand < 2){//cpu's hand is Choki
+      text("You win!",75,260);
+    }else{//cpu's hand is Pa
+      text("You lose",75,260);
+    }
+  }
+```
+
+- プログラムを実行すると，下図のように"Gu"の領域をクリックするとCPUとじゃんけんが行われ，結果が画面下部に表示される
+
+<img src="https://github.com/igakilab/basic_seminar/raw/images/images/processing_janken_gu.jpg" width=400>
+
+#### Try
+- Guだけでなく，ChokiやPaがクリックされた場合の処理も追加してみよう
+- 余裕がある人は勝数を保存する変数を用意し，画面右下に勝数を表示してみよう
+
+### 開発者によるメソッドの定義と利用
+- ここの内容は少し難しいので，余裕がある人のみ確認すること
+  - ただし，開発者による独自メソッドの定義と利用ができるようになると，より高品質で読みやすいプログラムが書けるようになるので可能な範囲で頑張ってみよう
+- これまでは `text()` や `rect()` 等のProcessingによって **定義済みの** メソッドを呼び出して使ったり， `void setup()` や `void draw()`， `void mouseClicked()` のようなProcessingから呼び出される(プログラムを実行すると，種類に応じたタイミングで勝手に実行される)メソッドの中身を自分で定義してつかったりしてきた
+- メソッドにはこれらのProcessingに用意されているものだけでなく， **開発者自身が定義して利用するメソッド** も存在する
+- ↑のプログラムから `void mouseClicked(){}` を削除し，以下のコードをコピペして追加しよう
+  - `showResult()` 及び `getCpuHand()` が **開発者自身が定義して利用するメソッド** になっている
+
+```processing
+void mouseClicked(){
+  fill(#000000);//Black
+  rect(0,150,450,150);
+  fill(#FFFFFF);//White
+
+  if(mouseX >=0 && mouseX < 150){
+    showResult("Gu",getCpuHand());
+  } else if (mouseX >= 150 && mouseX < 300){
+    showResult("Choki",getCpuHand());
+  } else {
+    showResult("Pa",getCpuHand());
+  }
+}
+
+void showResult(String playerHand, String cpuHand){
+  textSize(20);
+  text("Cpu:" + cpuHand,10,300);
+  textSize(40);
+  if(playerHand.equals(cpuHand)){
+    text("Draw",75,260);
+  }else if(playerHand.equals("Gu") && cpuHand.equals("Choki")
+  || playerHand.equals("Choki") && cpuHand.equals("Pa")
+  || playerHand.equals("Pa") && cpuHand.equals("Gu")){
+    text("You Win!",75,260);
+  }else{
+    text("You Lose",75,260);
+  }
+}
+
+String getCpuHand(){
+  float cpuHand = random(3);// 0~1:Gu,1~2:Choki,2~3:Pa
+  if(cpuHand < 1){//cpu's hand is Gu
+    return "Gu";
+  }else if(cpuHand < 2){//cpu's hand is Choki
+    return "Choki";
+  }else{//cpu's hand is Pa
+    return "Pa";
+  }
+}
+```
+
+### メソッドとは
+- `void mouseClicked()` もそうだが，メソッドを定義する場合は， **返り値の型 メソッド名(引数){ブロック}** の順で記述する
+- ここで返り値の型とは，そのメソッドを利用した際にメソッドが返す値の型 (変数の型と同じ)を指す．
+  - 例えば，↑の `getCpuHand()` の場合， `"Gu"`, `"Choki"`, `"Pa"` などの文字列が返るため，返り値の型が `String` となっている
+  - 返り値がない場合は `void` となる
+  - メソッドのブロック内で `return` に続けて変数や値を指定することでそのメソッドを終了して呼び出し元に指定された値が返る
+    - `getCpuHand()` の場合 `return "Gu";` という処理が実行された時点で， `getCpuHand()` は終了し， `"Gu"` という文字列が返る
+- メソッド名はアルファベットから始まる英数字で自由に決められる（既存のものとの重複は一定の条件下以外では認められない）
+- メソッド名に続いて，引数が指定される
+  - 引数は **変数の型と変数名** から構成される．変数の宣言と同様と考えて良い
+  - 複数の引数が与えられる場合は **,** (カンマ)でつなげて記述される
+  - ここで宣言された変数はそのメソッドの `{}` ブロック内で利用できる
+- `showResult("Choki",getCpuHand());` の場合， `void showResult(String playerHand, String cpuHand)` メソッドが呼び出され， `"Choki"` が `playerHand` に， `getCpuHand()` の実行結果("Gu"か"Choki"か"Pa")が `cpuHand` に代入される．その後， `showResult()` メソッドのブロックで `playerHand` と `cpuHand` を利用した処理が実行される
+- メソッドを定義することで， **CPUのじゃんけんの手を決定する** とか **CPUとプレーヤのじゃんけんの手から結果を出力する** といったある程度の処理のまとまりを作ることができるようになり，プログラムを見通しやすくなったり，同じ処理を何回も書かずにすむようになったりする
