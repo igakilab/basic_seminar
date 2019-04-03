@@ -47,7 +47,9 @@
     - [if文のネスト](#if文のネスト)
       - [Try](#try-8)
     - [開発者によるメソッドの定義と利用](#開発者によるメソッドの定義と利用)
-    - [メソッドとは](#メソッドとは)
+      - [メソッドとは](#メソッドとは)
+      - [Try](#try-9)
+  - [その他Processingでできること](#その他processingでできること)
 
 <!-- /TOC -->
 
@@ -721,7 +723,7 @@ String getCpuHand(){
 }
 ```
 
-### メソッドとは
+#### メソッドとは
 - `void mouseClicked()` もそうだが，メソッドを定義する場合は， **返り値の型 メソッド名(引数){ブロック}** の順で記述する
 - ここで返り値の型とは，そのメソッドを利用した際にメソッドが返す値の型 (変数の型と同じ)を指す．
   - 例えば，↑の `getCpuHand()` の場合， `"Gu"`, `"Choki"`, `"Pa"` などの文字列が返るため，返り値の型が `String` となっている
@@ -735,3 +737,14 @@ String getCpuHand(){
   - ここで宣言された変数はそのメソッドの `{}` ブロック内で利用できる
 - `showResult("Choki",getCpuHand());` の場合， `void showResult(String playerHand, String cpuHand)` メソッドが呼び出され， `"Choki"` が `playerHand` に， `getCpuHand()` の実行結果("Gu"か"Choki"か"Pa")が `cpuHand` に代入される．その後， `showResult()` メソッドのブロックで `playerHand` と `cpuHand` を利用した処理が実行される
 - メソッドを定義することで， **CPUのじゃんけんの手を決定する** とか **CPUとプレーヤのじゃんけんの手から結果を出力する** といったある程度の処理のまとまりを作ることができるようになり，プログラムを見通しやすくなったり，同じ処理を何回も書かずにすむようになったりする
+
+#### Try
+- 勝数，負け数，引き分け数を更新，表示するメソッドを作成し， `showResult(String playerHand, String cpuHand)` メソッドのブロック内部から呼び出して利用してみよう
+
+## その他Processingでできること
+- 図形の線の色の変更や図形の透過 (stroke())
+- 画像ファイルの読み込み(PImage, loadImage())
+- キーボードによる操作 (key, keyCode, keyPressed())
+- 1つ前のマウスポインタの位置 (pmouseX, pmouseY)
+- 座標軸の移動や図形の回転(translate(), rotate(), PI)
+  - 参考：http://www.d-improvement.jp/learning/processing/2011-a/08.html
