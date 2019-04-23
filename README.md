@@ -70,9 +70,9 @@
 - ペアはこのURLで毎回発表する(遅刻，欠席等で授業中に変更する可能性あり)
   - http://bit.ly/kisozemi2019
   - ドライバを授業全体で4回以上担当すること
-- Driverアンケート(Driverになった人がNavigatorを評価する）
+- ドライバ評価アンケート(ナビゲータになった人がドライバを評価する）
   - https://docs.google.com/forms/d/e/1FAIpQLSfa6tvZgBD0KQ7UNOykpO3xGLyVfA6960V3gdESa1KLtLaxtQ/viewform
-- Navigatorアンケート(NavigatorがDriverを評価する）
+- ナビゲータ評価アンケート(ドライバがナビゲータを評価する）
   - https://docs.google.com/forms/d/e/1FAIpQLScY8ZhsOkvYYLK0tvREhNiKd7dOkYbvUtZVNWxsQqyDA_KWvg/viewform
 
 
