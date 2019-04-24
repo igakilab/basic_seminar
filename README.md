@@ -68,7 +68,7 @@
 
 ### ペアプログラミング関連情報
 - ペアはこのURLで毎回発表する(遅刻，欠席等で授業中に変更する可能性あり)
-  - http://bit.ly/kisozemi2019
+  - [ドライバ-ナビゲータ公開ページ](https://oskit-my.sharepoint.com/:x:/g/personal/hiroshi_igaki_oit_ac_jp/EYOk5Nq_-htAtC_SgF7nKVoBxIs-XKh5ZCPvs8JYOPn3gg?e=kXEOi3)
   - ドライバを授業全体で4回以上担当すること
 - ドライバ評価アンケート(ナビゲータになった人がドライバを評価する）
   - https://docs.google.com/forms/d/e/1FAIpQLSfa6tvZgBD0KQ7UNOykpO3xGLyVfA6960V3gdESa1KLtLaxtQ/viewform
