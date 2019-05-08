@@ -748,3 +748,9 @@ String getCpuHand(){
 - 1つ前のマウスポインタの位置 (pmouseX, pmouseY)
 - 座標軸の移動や図形の回転(translate(), rotate(), PI)
   - 参考：http://www.d-improvement.jp/learning/processing/2011-a/08.html
+
+## Q and A
+### クリックすると画面を切り替えるのはどうすれば良いか
+- 画面の状態を保持する変数を用意しておき，draw()から参照するようにするといける
+  - 変数はmouseClicked()で更新する
+  - 例えば，flg=0のときはタイトル画面，flg=1になるとゲーム画面を表示する，とか

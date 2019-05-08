@@ -68,6 +68,7 @@
 - ドライバが最初の15分で最終的に何を開発したいかと今日どこまで開発したいかをナビゲータに説明する
   - **A4用紙を1枚配布**するので，その用紙を利用して説明を行うこと（毎授業終了時に回収する）
 - 残り80分程度でペアプロを進める
+- 最後に実装したprocessingフォルダをアップロードする
 - 毎回の授業終了後に相互評価アンケートに回答すること
 
 ### ペアプログラミング関連情報
@@ -78,7 +79,8 @@
   - https://docs.google.com/forms/d/e/1FAIpQLSfa6tvZgBD0KQ7UNOykpO3xGLyVfA6960V3gdESa1KLtLaxtQ/viewform
 - ドライバによるナビゲータ評価アンケート(ドライバがナビゲータを評価する）
   - https://docs.google.com/forms/d/e/1FAIpQLScY8ZhsOkvYYLK0tvREhNiKd7dOkYbvUtZVNWxsQqyDA_KWvg/viewform
-
+- プログラムのアップロード先．ログインして以下のURLをブラウザで開き，ドライバが自分の学生番号のフォルダ以下にProcessingのファイルを含むフォルダ(例えばtennisゲームならtennisフォルダ)を丸ごとドラッグアンドドロップする．
+  - https://oskit-my.sharepoint.com/:f:/g/personal/hiroshi_igaki_oit_ac_jp/EoylXTAHRn1Hl9hKw5RIlWEBlZKY6xSXV8DtVXIyfukq5g?e=fUZZW2
 
 ## 成績評価
 - ドライバによる説明用A4用紙（5回分）
