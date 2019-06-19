@@ -36,9 +36,18 @@
   - 毎回の授業終了後に相互評価アンケートに回答すること
 - 第5回(5/15)
   - PROGテストの解説
-- 第14回
+- 第14回（成果発表会）
+  - 14回までの宿題：開発したアプリを紹介する絵を3枚程度と遊び方や魅力を説明する文章，アプリ名を用意し，以下にアップロードしておく
+    - https://oskit-my.sharepoint.com/:f:/g/personal/hiroshi_igaki_oit_ac_jp/EoylXTAHRn1Hl9hKw5RIlWEBlZKY6xSXV8DtVXIyfukq5g?e=fUZZW2
   - 成果発表会
-  - 開発したアプリをみんなの前で1人3分間で紹介する
+    - 前半と後半に分けて，3分間でデモをする人とアプリを体験する人に分かれて相互に評価し合う．
+    - 評価のポイントは「技術点（この工夫が凄い），芸術点（見た目が美しい），魅力（またやってみたい）」をそれぞれ8段階で評価する．
+  - 成果発表会アンケート
+    - 前半アンケート(デモ1~12)
+      - https://docs.google.com/forms/d/e/1FAIpQLScGuebRWjzZIDhCe9uzmjQzkOFIsvWhTGpV4l7-bqnZGhnQnQ/viewform
+    - 後半アンケート(デモ13~24)
+      - https://docs.google.com/forms/d/e/1FAIpQLSdmDV6b0r79YHY4aB7uFbu8jfIYyvZopsSNbStBs3fv2RniVw/viewform
+
 
 ## チームソフトウェア開発
 - 複数人でソフトウェアを開発するとき，これから何をするのか，目的が何であるかを関係者（ステークホルダー）間で共有しながら開発を進めていく必要がある
@@ -83,7 +92,7 @@
   - https://oskit-my.sharepoint.com/:f:/g/personal/hiroshi_igaki_oit_ac_jp/EoylXTAHRn1Hl9hKw5RIlWEBlZKY6xSXV8DtVXIyfukq5g?e=fUZZW2
 
 ## 成績評価
-- ドライバによる説明用A4用紙（5回分）
+- ドライバによる説明用A4用紙（4~5回分）
   - 最終目標と各回の実装目標が絵などを交えて記述されていること
 - 相互評価アンケート(10回)
   - ドライバ，ナビゲータがそれぞれの立場で相互に評価を行っていること
