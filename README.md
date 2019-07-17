@@ -45,8 +45,8 @@
   - 成果発表会アンケート
     - 前半アンケート(デモ1~12)
       - https://docs.google.com/forms/d/e/1FAIpQLScGuebRWjzZIDhCe9uzmjQzkOFIsvWhTGpV4l7-bqnZGhnQnQ/viewform
-    - 後半アンケート(デモ13~24)
-      - https://docs.google.com/forms/d/e/1FAIpQLSdmDV6b0r79YHY4aB7uFbu8jfIYyvZopsSNbStBs3fv2RniVw/viewform
+    - 後半アンケート(デモ13~23)
+      - https://docs.google.com/forms/d/e/1FAIpQLScKp1RTPRiYnbSUnF7Q1hKsqCgmc2MUPT2dZEtmtJJgGN0Xwg/viewform
 
 
 ## チームソフトウェア開発
@@ -98,5 +98,9 @@
   - ドライバ，ナビゲータがそれぞれの立場で相互に評価を行っていること
   - アンケート内容が悪いといった理由での減点は一切行わないので自由に記述すること
   - ただし，最終的に匿名化したうえでフィードバックを行う予定なので，読まれることを想定して記述すること
+- デモ大会
+  - 動くものをデモできているか
+  - アンケートに回答したか
+  - アンケートによる評価内容
 - 最終成果物
   - 提出用のフォルダを用意するので，processingのアプリのソースコードを提出すること
