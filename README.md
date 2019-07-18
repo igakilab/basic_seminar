@@ -42,7 +42,7 @@
   - 14回までの宿題2：アプリ名や説明文を[ドライバ-ナビゲータ公開ページ](https://oskit-my.sharepoint.com/:x:/g/personal/hiroshi_igaki_oit_ac_jp/EYOk5Nq_-htAtC_SgF7nKVoBxIs-XKh5ZCPvs8JYOPn3gg?e=kXEOi3)に書いておく
   - 大デモ大会
     - 前半と後半に分けて，3分間でデモをする人とアプリを体験する人に分かれて相互に評価し合う．
-    - 評価のポイントは「技術点（この工夫が凄い），芸術点（見た目が美しい），魅力（またやってみたい）」をそれぞれ8段階で評価する．
+    - 評価のポイントは「技術点（この工夫が凄い），芸術点（見た目が美しい），魅力（またやってみたい）」をそれぞれ5段階で評価する．
   - 成果発表会アンケート
     - 前半アンケート(デモ1~12)
       - https://docs.google.com/forms/d/e/1FAIpQLScGuebRWjzZIDhCe9uzmjQzkOFIsvWhTGpV4l7-bqnZGhnQnQ/viewform
