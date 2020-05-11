@@ -86,47 +86,21 @@
 
 
 ## インストール
-- 授業中でDLに時間がかかりすぎる場合は第2回までにDLしてインストールしておくこと
+- `2020_ibasic_igaki.pdf` を見て，必要なファイルのダウンロード及びインストールを実施しておくこと
+- インストール方法が分からない場合は一緒にやるかチーム内で相談しながらインストール作業を行うので，ひとまずファイルのダウンロードだけでも終わらせておいてください．
 
-### ファイルのダウンロード
-- ↓のページから`Windows 64-bit`というLinkをクリックし，`processing-3.X.Y-windows64.zip`というファイルをDLする
-  - https://processing.org/download/
-  - X,Yはバージョン番号で，DLするときによって変わる
-  - 130MBくらい
-### ファイルの解凍
-- C:\oit というフォルダを作成する
-  - 解凍先フォルダ．本来はどこでも良いが，説明やフォローのため，Cドライブ直下にoitという名前のフォルダを作成すること
-- `processing-3.X.Y-windows64.zip`ファイルをC:\oit に解凍する．解凍後に以下のようなディレクトリ構成になっていることを確認すること
-```
-C:\oit\processing-3.X.Y\core
-C:\oit\processing-3.X.Y\java
-:
-:
-C:\oit\processing-3.X.Y\processing.exe
-C:\oit\processing-3.X.Y\processing-java.exe
-C:\oit\processing-3.X.Y\revisions.txt
-```
-### Processingの実行
-- `C:\oit\processing-3.X.Y\processing.exe`をダブルクリックする
-- ↓のような画面が表示されればOK
-  - パソコンのスペックによっては起動まで少し時間がかかる
-
-<img src="https://github.com/igakilab/basic_seminar/raw/images/images/processing_start.jpg" width=400>
+### vscodeの実行
+- `C:\oit\ibasicYY\vscode-portable-win64-1.XX.Y-ZZ\vscode-portable.exe`をダブルクリックする
+- `2020_ibasic_igaki.pdf` のとおりにインストール及びサンプルの実行ができていれば，`C:\Users\?????\oithomes\ibasic\kadai\ibasicYY`をvscodeが開いており，sampleフォルダとsample.pdeファイルができているはず
+  - `?????` には各自のWindowsのログインユーザ名が，XXやYYにはバージョン番号や年の情報(2020年なら20など)が入る
 
 ## じゃんけんゲームを作ってみよう（その1）
-- 細かいことはおいおい説明するので，まずは以下の手順に従ってサンプルを実装して動かしてみよう
 
-### sketchファイルの保存
-- Processingのプログラムを書くファイル（sketchと言う）がデフォルトのままなので，名前をじゃんけんゲームに相応しい **Janken** に変更する
-- 以下の画像を参考に，**ファイル->保存** をクリックする
+### sketchファイル(*.pde)の作成
+- sampleとは別に`janken` フォルダと`janken.pde`ファイルを下記のように作成しよう
+  - フォルダ名とファイル名は必ず同じになるようにしよう．Processingはこれが異なっていると正常に動作しない．
 
-<img src="https://github.com/igakilab/basic_seminar/raw/images/images/processing_file.jpg" width=300>
-
-- 次に，ファイル名のところに`Janken`と入力し，**保存** ボタンをクリックする
-
-<img src="https://github.com/igakilab/basic_seminar/raw/images/images/processing_save.jpg" width=500>
-
-- そうすると，ドキュメントフォルダの中の`Processing` フォルダ内に `Janken` というフォルダが作成され，そのフォルダの中にProcessingファイルである `Janken.pde` というファイルが作成される
+<img src="https://github.com/igakilab/basic_seminar/raw/images/images/vscode_janken.jpg" width=500>
 
 ### 画面の表示
 - Processing画面のJankenと表示されたエディタ部分に下記のコードをコピペする
@@ -140,9 +114,9 @@ void draw(){
 }
 ```
 
-- このコードを書いてからエディタ部分上部にある`▶`をクリックすると，下の画面のように横幅が450px(ピクセル)，縦が300px(ピクセル)のグレーの画面が表示される
+- このコードを書いてから「janken」フォルダ内でbashターミナルから「processing-java」と実行できれば，下の画面のように横幅が450px(ピクセル)，縦が300px(ピクセル)のグレーの画面が表示される．
 
-<img src="https://github.com/igakilab/basic_seminar/raw/images/images/processing_run.jpg" width=500>
+<img src="https://github.com/igakilab/basic_seminar/raw/images/images/vscode_janken2.jpg" width=500>
 
 - Processingでは必ず`setup()`, `draw()` という **メソッド** が記述される
   - ここでメソッドとは一定の処理に名前をつけてまとめたもの
