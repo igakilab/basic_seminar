@@ -47,7 +47,9 @@
     - [if文のネスト](#if文のネスト)
       - [Try](#try-8)
     - [開発者によるメソッドの定義と利用](#開発者によるメソッドの定義と利用)
-    - [メソッドとは](#メソッドとは)
+      - [メソッドとは](#メソッドとは)
+      - [Try](#try-9)
+  - [その他Processingでできること](#その他processingでできること)
 
 <!-- /TOC -->
 
@@ -84,47 +86,21 @@
 
 
 ## インストール
-- 授業中でDLに時間がかかりすぎる場合は第2回までにDLしてインストールしておくこと
+- `2020_ibasic_igaki.pdf` を見て，必要なファイルのダウンロード及びインストールを実施しておくこと
+- インストール方法が分からない場合は一緒にやるかチーム内で相談しながらインストール作業を行うので，ひとまずファイルのダウンロードだけでも終わらせておいてください．
 
-### ファイルのダウンロード
-- ↓のページから`Windows 64-bit`というLinkをクリックし，`processing-3.X.Y-windows64.zip`というファイルをDLする
-  - https://processing.org/download/
-  - X,Yはバージョン番号で，DLするときによって変わる
-  - 130MBくらい
-### ファイルの解凍
-- C:\oit というフォルダを作成する
-  - 解凍先フォルダ．本来はどこでも良いが，説明やフォローのため，Cドライブ直下にoitという名前のフォルダを作成すること
-- `processing-3.X.Y-windows64.zip`ファイルをC:\oit に解凍する．解凍後に以下のようなディレクトリ構成になっていることを確認すること
-```
-C:\oit\processing-3.X.Y\core
-C:\oit\processing-3.X.Y\java
-:
-:
-C:\oit\processing-3.X.Y\processing.exe
-C:\oit\processing-3.X.Y\processing-java.exe
-C:\oit\processing-3.X.Y\revisions.txt
-```
-### Processingの実行
-- `C:\oit\processing-3.X.Y\processing.exe`をダブルクリックする
-- ↓のような画面が表示されればOK
-  - パソコンのスペックによっては起動まで少し時間がかかる
-
-<img src="https://github.com/igakilab/basic_seminar/raw/images/images/processing_start.jpg" width=400>
+### vscodeの実行
+- `C:\oit\ibasicYY\vscode-portable-win64-1.XX.Y-ZZ\vscode-portable.exe`をダブルクリックする
+- `2020_ibasic_igaki.pdf` のとおりにインストール及びサンプルの実行ができていれば，`C:\Users\?????\oithomes\ibasic\kadai\ibasicYY`をvscodeが開いており，sampleフォルダとsample.pdeファイルができているはず
+  - `?????` には各自のWindowsのログインユーザ名が，XXやYYにはバージョン番号や年の情報(2020年なら20など)が入る
 
 ## じゃんけんゲームを作ってみよう（その1）
-- 細かいことはおいおい説明するので，まずは以下の手順に従ってサンプルを実装して動かしてみよう
 
-### sketchファイルの保存
-- Processingのプログラムを書くファイル（sketchと言う）がデフォルトのままなので，名前をじゃんけんゲームに相応しい **Janken** に変更する
-- 以下の画像を参考に，**ファイル->保存** をクリックする
+### sketchファイル(*.pde)の作成
+- sampleとは別に`janken` フォルダと`janken.pde`ファイルを下記のように作成しよう
+  - フォルダ名とファイル名は必ず同じになるようにしよう．Processingはこれが異なっていると正常に動作しない．
 
-<img src="https://github.com/igakilab/basic_seminar/raw/images/images/processing_file.jpg" width=300>
-
-- 次に，ファイル名のところに`Janken`と入力し，**保存** ボタンをクリックする
-
-<img src="https://github.com/igakilab/basic_seminar/raw/images/images/processing_save.jpg" width=500>
-
-- そうすると，ドキュメントフォルダの中の`Processing` フォルダ内に `Janken` というフォルダが作成され，そのフォルダの中にProcessingファイルである `Janken.pde` というファイルが作成される
+<img src="https://github.com/igakilab/basic_seminar/raw/images/images/vscode_janken.jpg" width=500>
 
 ### 画面の表示
 - Processing画面のJankenと表示されたエディタ部分に下記のコードをコピペする
@@ -138,9 +114,9 @@ void draw(){
 }
 ```
 
-- このコードを書いてからエディタ部分上部にある`▶`をクリックすると，下の画面のように横幅が450px(ピクセル)，縦が300px(ピクセル)のグレーの画面が表示される
+- このコードを書いてから「janken」フォルダ内でbashターミナルから「processing-java」と実行できれば，下の画面のように横幅が450px(ピクセル)，縦が300px(ピクセル)のグレーの画面が表示される．
 
-<img src="https://github.com/igakilab/basic_seminar/raw/images/images/processing_run.jpg" width=500>
+<img src="https://github.com/igakilab/basic_seminar/raw/images/images/vscode_janken2.jpg" width=500>
 
 - Processingでは必ず`setup()`, `draw()` という **メソッド** が記述される
   - ここでメソッドとは一定の処理に名前をつけてまとめたもの
@@ -200,7 +176,7 @@ void draw(){
 - `ellipse()`は楕円を描画するメソッド．引数を4つとり，先頭から楕円の **中心** 座標のx座標，y座標，楕円の幅，楕円の高さを表している
 - `rect()`は長方形を描画するメソッド．引数を4つとり，先頭から長方形の **左上** 座標のx座標，y座標，長方形の幅，長方形の高さを表している
 
-<img src="https://github.com/igakilab/basic_seminar/raw/images/images/processing_zukei.jpg" width=400>
+<img src="https://github.com/igakilab/basic_seminar/raw/images/images/vscode_janken3.jpg" width=400>
 
 - 図形はこれらの他にも直線 `line()` ，三角形 `triangle()` ，弧 `arc()` など様々なものがある
 - 以下のURLのShapeという項目に説明があるので確認してみよう
@@ -246,7 +222,7 @@ void draw(){
 - `text("Gu",50,80)` は下図が示すとおり， **Gu** という文字列の **左下** の座標を `50,80` に表示することを意味する
   - 0がx座標，50がy座標を表す
 
-<img src="https://github.com/igakilab/basic_seminar/raw/images/images/processing_text.jpg" width=400>
+<img src="https://github.com/igakilab/basic_seminar/raw/images/images/vscode_janken_text.jpg" width=400>
 
 #### Try
 - いろいろな文字を表示させてみよう
@@ -254,13 +230,9 @@ void draw(){
 
 #### 日本語の扱い（おまけ）
 - この項目は必須ではないので，余裕がある学生のみ実施すること．
-- Processingでは日本語を扱えるようにするため，2つの設定を行う必要がある
-1. エディタ上にコメントとして日本語を入力できるようにするためには下図のように``ファイル->設定->エディタとコンソールのフォント「MSゴシック」``を実行する必要がある
-  - エディタの描画の関係でMSゴシックにすると若干カーソル位置と文字の位置がずれるため，日本語化が不要な場合は元のSource Code Proのままにしておくほうが良い
+- Processingでは日本語を扱えるようにするため，フォントの設定を行う必要がある
+  - `PFont font = createFont("MS Gothic",50);` は日本語フォントを50ptの大きさで作成(create)している．その後， `textFont(font);` を呼び出すことで，以降のtextをこの日本語フォントで下図のように表示することができるようになる．
 
-<img src="https://github.com/igakilab/basic_seminar/raw/images/images/processing_japan_config.jpg" width=400>
-
-2. 1の設定でエディタ中に日本語が入力できるようになる．ただし， `text("ぐー",50,80);` として実行しても，エディタ上では日本語が表示されているが，実行した画面では正常に日本語は表示されない．以下をコピペしてプログラムを実行してみること．
 
 ```Processing
 void setup(){
@@ -283,9 +255,8 @@ void draw(){
 }
 ```
 
-- `PFont font = createFont("MS Gothic",50);` は日本語フォントを50ptの大きさで作成(create)している．その後， `textFont(font);` を呼び出すことで，以降のtextをこの日本語フォントで下図のように表示することができるようになる．
 
-<img src="https://github.com/igakilab/basic_seminar/raw/images/images/processing_japanese_font.jpg" width=400>
+<img src="https://github.com/igakilab/basic_seminar/raw/images/images/vscode_janken_japanese.jpg" width=400>
 
 ### マウスでの操作と条件分岐と変数(その1)
 - 以下のコードをコピペしてみよう
@@ -327,7 +298,7 @@ void mouseClicked(){
   - 変数とは何らかの値を保存するための箱（詳細は後日）
 - この条件分岐は**マウスでクリックした点のx座標が0以上で，かつ(&&)，x座標が150未満の場合，「Gu Clicked」と画面に表示する** という意味になっている
 
-<img src="https://github.com/igakilab/basic_seminar/raw/images/images/processing_clicked.jpg" width=400>
+<img src="https://github.com/igakilab/basic_seminar/raw/images/images/vscode_janken_clicked.jpg" width=400>
 
 #### Try
 - クリックする座標や表示される文字列を変更してみよう
@@ -360,8 +331,10 @@ void mouseClicked(){
 - 変数や乱数，繰り返し処理などの一般的なプログラミング言語の要素を利用したプログラムをテニスゲームを題材に実装してみよう
 
 ### sketchファイル(tennis)の作成
-- じゃんけんゲームを参考にtennisという名前のスケッチファイルを作成しよう
-- `Janken` を開いているときは**ファイル->名前をつけて保存** で「tennis」を入力すればOK．
+- じゃんけんゲームを参考にtennisという名前のフォルダとスケッチファイル(tennis.pde)を新しく作成しよう
+  - bashターミナルの`cd ../` は今いるフォルダのひとつ上のフォルダに移動するコマンド．このコマンドを実行するとjankenフォルダからひとつ上のibasicYYフォルダに移動できる．そのあと `cd tennis` と実行することで，tennisフォルダに移動する．
+
+<img src="https://github.com/igakilab/basic_seminar/raw/images/images/vscode_tennis.jpg" width=400>
 
 ### 変数の使い方
 - 以下のコードをコピペしてみよう
@@ -435,7 +408,7 @@ void draw(){
   - このプログラムの場合，  `x = random(500);  ellipse(x,x,20,20); //Ball` この2行が何回も何回も呼び出される
 - `random()` はランダムな値を返すメソッド．引数に500が指定されると，0以上500 **未満** の小数値が返ってくる．ここでは，xという **変数** に **0以上500未満** のランダムな値が保存（一般に**代入**と呼ぶ)される
 
-<img src="https://github.com/igakilab/basic_seminar/raw/images/images/processing_random.jpg" width=400>
+<img src="https://github.com/igakilab/basic_seminar/raw/images/images/vscode_tennis_random.jpg" width=400>
 
 #### 乱数とは
 - ゲームやアニメーションなどの実装・描画には指定した範囲でランダムな値を必要とするものが多い
@@ -445,7 +418,7 @@ void draw(){
 - ↓の図のように円の中心のy座標もrandom() メソッドを利用してランダムな値になるようにプログラムを変更してみよう
   - まず，変数yを**ブロックの外**で宣言する．さらに，xと同様に500未満の小数値を`draw()`メソッドの中で変数yに代入し，ellipse()メソッドで利用すれば良い
 
-<img src="https://github.com/igakilab/basic_seminar/raw/images/images/processing_random2.jpg" width=400>
+<img src="https://github.com/igakilab/basic_seminar/raw/images/images/vscode_tennis_random2.jpg" width=400>
 
 ### draw()を利用した繰り返し2
 - 以下のプログラムをコピペしてみよう
@@ -535,11 +508,10 @@ void draw(){
   println("x:"+x);
 ```
 
-- このコードを追加した状態でプログラムを実行すると，下図のようにエディタ下部のコンソールというエリアに `x:105.621` というように `x:`という文字列とそのときの`変数x` の値が表示される
+- このコードを追加した状態でプログラムを実行すると，下図のようにbashターミナルのエリアに `x:105.621` というように `x:`という文字列とそのときの`変数x` の値が表示される
 - プログラム実行時に意図しない振る舞いをするときは利用すると良い
-  - println() を利用する以外に，Processingエディタに付属のデバッガを利用してデバッグを行う方法もあるが授業中には紹介しない．興味がある場合は調べてみると良い
 
-<img src="https://github.com/igakilab/basic_seminar/raw/images/images/processing_println.jpg" width=400>
+<img src="https://github.com/igakilab/basic_seminar/raw/images/images/vscode_tennis_println.jpg" width=400>
 
 #### Try
 - speedXやspeedYの最初の値(初期値)を変更するとどうなるか確認してみよう
@@ -597,7 +569,8 @@ void draw(){
 ## じゃんけんゲームを作ってみよう（その2）
 - 乱数や `draw()` メソッド，変数などを駆使してCPUと対戦できるじゃんけんゲームを完成させよう
 - まず，↑で作成したじゃんけんゲーム（その1）のファイルを開こう
-  - processingを起動し，**ファイル->開く** で `Janken` フォルダの`Janken.pde` ファイルを指定すると良い
+  - `janken` フォルダの`janken.pde` ファイルを開く
+  - ターミナルで`janken`フォルダの中にcdするのを忘れないようにすること
 
 ### if文のネスト
 - 以下のコードをコピペしてみよう
@@ -665,7 +638,7 @@ void mouseClicked(){
 
 - プログラムを実行すると，下図のように"Gu"の領域をクリックするとCPUとじゃんけんが行われ，結果が画面下部に表示される
 
-<img src="https://github.com/igakilab/basic_seminar/raw/images/images/processing_janken_gu.jpg" width=400>
+<img src="https://github.com/igakilab/basic_seminar/raw/images/images/vscode_janken_gu.jpg" width=400>
 
 #### Try
 - Guだけでなく，ChokiやPaがクリックされた場合の処理も追加してみよう
@@ -721,7 +694,7 @@ String getCpuHand(){
 }
 ```
 
-### メソッドとは
+#### メソッドとは
 - `void mouseClicked()` もそうだが，メソッドを定義する場合は， **返り値の型 メソッド名(引数){ブロック}** の順で記述する
 - ここで返り値の型とは，そのメソッドを利用した際にメソッドが返す値の型 (変数の型と同じ)を指す．
   - 例えば，↑の `getCpuHand()` の場合， `"Gu"`, `"Choki"`, `"Pa"` などの文字列が返るため，返り値の型が `String` となっている
@@ -735,3 +708,20 @@ String getCpuHand(){
   - ここで宣言された変数はそのメソッドの `{}` ブロック内で利用できる
 - `showResult("Choki",getCpuHand());` の場合， `void showResult(String playerHand, String cpuHand)` メソッドが呼び出され， `"Choki"` が `playerHand` に， `getCpuHand()` の実行結果("Gu"か"Choki"か"Pa")が `cpuHand` に代入される．その後， `showResult()` メソッドのブロックで `playerHand` と `cpuHand` を利用した処理が実行される
 - メソッドを定義することで， **CPUのじゃんけんの手を決定する** とか **CPUとプレーヤのじゃんけんの手から結果を出力する** といったある程度の処理のまとまりを作ることができるようになり，プログラムを見通しやすくなったり，同じ処理を何回も書かずにすむようになったりする
+
+#### Try
+- 勝数，負け数，引き分け数を更新，表示するメソッドを作成し， `showResult(String playerHand, String cpuHand)` メソッドのブロック内部から呼び出して利用してみよう
+
+## その他Processingでできること
+- 図形の線の色の変更や図形の透過 (stroke())
+- 画像ファイルの読み込み(PImage, loadImage())
+- キーボードによる操作 (key, keyCode, keyPressed())
+- 1つ前のマウスポインタの位置 (pmouseX, pmouseY)
+- 座標軸の移動や図形の回転(translate(), rotate(), PI)
+  - 参考：http://www.d-improvement.jp/learning/processing/2011-a/08.html
+
+## Q and A
+### クリックすると画面を切り替えるのはどうすれば良いか
+- 画面の状態を保持する変数を用意しておき，draw()から参照するようにするといける
+  - 変数はmouseClicked()で更新する
+  - 例えば，flg=0のときはタイトル画面，flg=1になるとゲーム画面を表示する，とか
