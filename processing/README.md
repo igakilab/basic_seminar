@@ -44,9 +44,13 @@
   - [じゃんけんゲームを作ってみよう（その2）](#じゃんけんゲームを作ってみようその2)
     - [if文のネスト](#if文のネスト)
       - [Try](#try-8)
+  - [おまけ](#おまけ)
     - [開発者によるメソッドの定義と利用](#開発者によるメソッドの定義と利用)
       - [メソッドとは](#メソッドとは)
       - [Try](#try-9)
+    - [外部ライブラリを利用した音楽の再生](#外部ライブラリを利用した音楽の再生)
+      - [外部ライブラリ(minim)のインストール](#外部ライブラリminimのインストール)
+      - [minimの利用](#minimの利用)
   - [その他Processingでできること](#その他processingでできること)
   - [Q and A](#q-and-a)
     - [クリックすると画面を切り替えるのはどうすれば良いか](#クリックすると画面を切り替えるのはどうすれば良いか)
@@ -714,14 +718,6 @@ String getCpuHand(){
 #### Try
 - 勝数，負け数，引き分け数を更新，表示するメソッドを作成し， `showResult(String playerHand, String cpuHand)` メソッドのブロック内部から呼び出して利用してみよう
 
-## その他Processingでできること
-- 図形の線の色の変更や図形の透過 (stroke())
-- 画像ファイルの読み込み(PImage, loadImage())
-- キーボードによる操作 (key, keyCode, keyPressed())
-- 1つ前のマウスポインタの位置 (pmouseX, pmouseY)
-- 座標軸の移動や図形の回転(translate(), rotate(), PI)
-  - 参考：http://www.d-improvement.jp/learning/processing/2011-a/08.html
-
 ### 外部ライブラリを利用した音楽の再生
 - 参考
   - サウンドの基本(minimライブラリの使用)
@@ -730,7 +726,7 @@ String getCpuHand(){
     - https://taira-komori.jpn.org/freesound.html
   - 効果音ラボ
     - https://soundeffect-lab.info/
-### 外部ライブラリ(minim)のインストール
+#### 外部ライブラリ(minim)のインストール
 - 以下の方法はminimに限らず，外部ライブラリを利用する場合はすべて同じになる．
 - C:\oit\ibasicYY\processing-3.X.Y フォルダにエクスプローラで移動し，`processing.exe` を実行する
 <img src="https://github.com/igakilab/basic_seminar/raw/images/images/processingexe.jpg" width=400>
@@ -740,7 +736,7 @@ String getCpuHand(){
 <img src="https://github.com/igakilab/basic_seminar/raw/images/images/processing_library.jpg" width=400>
 - Installが終了したら`processing.exe`を終了する
 
-### minimの利用
+#### minimの利用
 - tennis.pdeを開き，冒頭に下記コードを追加する
 
 ```processing
@@ -770,7 +766,13 @@ AudioPlayer player;
     player.rewind();//再生が終わったら巻き戻す
   }
 ```
-
+## その他Processingでできること
+- 図形の線の色の変更や図形の透過 (stroke())
+- 画像ファイルの読み込み(PImage, loadImage())
+- キーボードによる操作 (key, keyCode, keyPressed())
+- 1つ前のマウスポインタの位置 (pmouseX, pmouseY)
+- 座標軸の移動や図形の回転(translate(), rotate(), PI)
+  - 参考：http://www.d-improvement.jp/learning/processing/2011-a/08.html
 
 ## Q and A
 ### クリックすると画面を切り替えるのはどうすれば良いか
