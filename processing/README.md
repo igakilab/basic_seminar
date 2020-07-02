@@ -7,11 +7,9 @@
     - [画面をクリックできる](#画面をクリックできる)
     - [複雑なサンプル](#複雑なサンプル)
   - [インストール](#インストール)
-    - [ファイルのダウンロード](#ファイルのダウンロード)
-    - [ファイルの解凍](#ファイルの解凍)
-    - [Processingの実行](#processingの実行)
+    - [vscodeの実行](#vscodeの実行)
   - [じゃんけんゲームを作ってみよう（その1）](#じゃんけんゲームを作ってみようその1)
-    - [sketchファイルの保存](#sketchファイルの保存)
+    - [sketchファイル(*.pde)の作成](#sketchファイルpdeの作成)
     - [画面の表示](#画面の表示)
       - [Try](#try)
     - [背景色の変更](#背景色の変更)
@@ -50,6 +48,8 @@
       - [メソッドとは](#メソッドとは)
       - [Try](#try-9)
   - [その他Processingでできること](#その他processingでできること)
+  - [Q and A](#q-and-a)
+    - [クリックすると画面を切り替えるのはどうすれば良いか](#クリックすると画面を切り替えるのはどうすれば良いか)
 
 <!-- /TOC -->
 
@@ -644,6 +644,8 @@ void mouseClicked(){
 - Guだけでなく，ChokiやPaがクリックされた場合の処理も追加してみよう
 - 余裕がある人は勝数を保存する変数を用意し，画面右下に勝数を表示してみよう
 
+## おまけ
+- 以降は発展的な内容です．知っておくと確実に便利なのは間違いないですが，少し難しいので余裕がある人だけやってみましょう．
 ### 開発者によるメソッドの定義と利用
 - ここの内容は少し難しいので，余裕がある人のみ確認すること
   - ただし，開発者による独自メソッドの定義と利用ができるようになると，より高品質で読みやすいプログラムが書けるようになるので可能な範囲で頑張ってみよう
@@ -719,6 +721,55 @@ String getCpuHand(){
 - 1つ前のマウスポインタの位置 (pmouseX, pmouseY)
 - 座標軸の移動や図形の回転(translate(), rotate(), PI)
   - 参考：http://www.d-improvement.jp/learning/processing/2011-a/08.html
+
+### 外部ライブラリを利用した音楽の再生
+- 参考
+  - サウンドの基本(minimライブラリの使用)
+    - http://r-dimension.xsrv.jp/classes_j/minim/
+  - 無料効果音
+    - https://taira-komori.jpn.org/freesound.html
+  - 効果音ラボ
+    - https://soundeffect-lab.info/
+### 外部ライブラリ(minim)のインストール
+- 以下の方法はminimに限らず，外部ライブラリを利用する場合はすべて同じになる．
+- C:\oit\ibasicYY\processing-3.X.Y フォルダにエクスプローラで移動し，`processing.exe` を実行する
+<img src="https://github.com/igakilab/basic_seminar/raw/images/images/processingexe.jpg" width=400>
+- Processingのツールが起動するので，以下のようにスケッチ->ライブラリをインポート->ライブラリを追加，を選択する
+<img src="https://github.com/igakilab/basic_seminar/raw/images/images/processing_addlibrary.jpg" width=400>
+- Contribution Managerが起動するので，「Libraries」というタブで「minim」と入力してライブラリを検索し，対象のライブラリを選択した状態で右下の「Install」ボタンをクリックする
+<img src="https://github.com/igakilab/basic_seminar/raw/images/images/processing_library.jpg" width=400>
+- Installが終了したら`processing.exe`を終了する
+
+### minimの利用
+- tennis.pdeを開き，冒頭に下記コードを追加する
+
+```processing
+import ddf.minim.*; //minimライブラリのインポート
+
+//音声関連の変数
+Minim minim;
+AudioPlayer player;
+```
+
+- 次に，setup()メソッド内部に下記コードを追加する．同時に，`tennis.pde`と同じ場所の`data`フォルダを作成し，`data`フォルダ内に再生したいmp3ファイルを配置する．この例では上記参考サイトの「無料効果音」からダウンロードしたmp3ファイルを`data`フォルダに配置している．
+  - これで音声ファイルを利用する準備が完了する．
+
+```processing
+  //音声初期化
+  minim = new Minim(this);//minimオブジェクトアプリの初期化
+  player = minim.loadFile("select01.mp3");//音声ファイルの読み込み
+```
+
+- draw()メソッド内部の`if(x >= mouseX && x <= mouseX + 100 && y > 400)`のブロック`{}`内部に下記のように`player.play();`と`player.rewind();`の2行を追加する．
+  - ボールが長方形にあたるたびにmp3ファイルが再生されるようになる．
+
+```processing
+  if(x >= mouseX && x <= mouseX + 100 && y > 400){
+    speedY = speedY * -1;
+    player.play();//音声の再生
+    player.rewind();//再生が終わったら巻き戻す
+  }
+```
 
 
 ## Q and A
