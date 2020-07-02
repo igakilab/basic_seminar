@@ -734,7 +734,7 @@ String getCpuHand(){
 <img src="https://github.com/igakilab/basic_seminar/raw/images/images/processing_addlibrary.jpg" width=400>
 - Contribution Managerが起動するので，「Libraries」というタブで「minim」と入力してライブラリを検索し，対象のライブラリを選択した状態で右下の「Install」ボタンをクリックする
 <img src="https://github.com/igakilab/basic_seminar/raw/images/images/processing_library.jpg" width=400>
-- Installが終了したら`processing.exe`を終了する
+- Installが終了したら `processing.exe` を終了する
 
 #### minimの利用
 - tennis.pdeを開き，冒頭に下記コードを追加する
